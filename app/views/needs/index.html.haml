@@ -1,0 +1,23 @@
+%h1 Listing needs
+
+%table
+  %tr
+    %th Budget min
+    %th Budget max
+    %th Priority
+    %th
+    %th
+    %th
+
+  - @needs.each do |need|
+    %tr
+      %td= need.budget_min
+      %td= need.budget_max
+      %td= need.priority
+      %td= link_to 'Show', need
+      %td= link_to 'Edit', edit_need_path(need)
+      %td= link_to 'Destroy', need, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Need', new_need_path

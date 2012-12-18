@@ -1,0 +1,21 @@
+%h1 Listing merits
+
+%table
+  %tr
+    %th Name
+    %th Priority
+    %th
+    %th
+    %th
+
+  - @merits.each do |merit|
+    %tr
+      %td= merit.name
+      %td= merit.priority
+      %td= link_to 'Show', merit
+      %td= link_to 'Edit', edit_merit_path(merit)
+      %td= link_to 'Destroy', merit, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Merit', new_merit_path

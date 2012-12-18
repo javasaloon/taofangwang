@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @merit.name
+%p
+  %b Priority:
+  = @merit.priority
+
+= link_to 'Edit', edit_merit_path(@merit)
+\|
+= link_to 'Back', merits_path

@@ -1,0 +1,10 @@
+= simple_form_for(@need) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :budget_min
+    = f.input :budget_max
+    = f.input :priority
+
+  .form-actions
+    = f.button :submit

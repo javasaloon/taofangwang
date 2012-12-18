@@ -1,4 +1,10 @@
 Taofangwang::Application.routes.draw do
+  resources :merits
+
+
+  resources :needs
+
+
   authenticated :user do
     root :to => 'home#index'
   end

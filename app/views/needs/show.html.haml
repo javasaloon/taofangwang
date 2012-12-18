@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Budget min:
+  = @need.budget_min
+%p
+  %b Budget max:
+  = @need.budget_max
+%p
+  %b Priority:
+  = @need.priority
+
+= link_to 'Edit', edit_need_path(@need)
+\|
+= link_to 'Back', needs_path
