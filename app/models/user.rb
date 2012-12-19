@@ -13,7 +13,7 @@ class User
   field :email,              :type => String, :default => ""
   field :encrypted_password, :type => String, :default => ""
 
-  has_many :needs
+  has_many :needs, class_name: "Need", inverse_of: :owner
 
   validates_presence_of :email
   validates_presence_of :encrypted_password

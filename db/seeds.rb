@@ -18,7 +18,7 @@ user = User.create :name => ENV['ADMIN_NAME'].dup, :email => ENV['ADMIN_EMAIL'].
 puts 'user: ' << user.name
 user.add_role :admin
 
-need = Need.create :budget_min=>100, :budget_max=>120, :priority=>1, :user=>user
+need = Need.create :budget_min=>100, :budget_max=>120, :priority=>1, :owner=>user
 p need
 
 merit = Merit.create :name=>"学区房", :priority=>1, :need=>need
