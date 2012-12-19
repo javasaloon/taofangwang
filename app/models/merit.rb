@@ -1,6 +1,5 @@
 class Merit
   include Mongoid::Document
-  rolify
   include Mongoid::Timestamps
 
   field :name, type: String
@@ -8,6 +7,6 @@ class Merit
 
   belongs_to :need
 
-  attr_accessor :name, :priority, :need, :created_at, :updated_at
+  attr_accessible :name, :priority, :need, :created_at, :updated_at
 
 end

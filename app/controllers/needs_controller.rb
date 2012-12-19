@@ -41,6 +41,7 @@ class NeedsController < ApplicationController
   # POST /needs.json
   def create
     @need = Need.new(params[:need])
+    @need.user = current_user
 
     respond_to do |format|
       if @need.save

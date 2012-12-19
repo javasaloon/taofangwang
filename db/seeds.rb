@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -16,3 +17,9 @@ puts 'DEFAULT USERS'
 user = User.create :name => ENV['ADMIN_NAME'].dup, :email => ENV['ADMIN_EMAIL'].dup, :password => ENV['ADMIN_PASSWORD'].dup, :password_confirmation => ENV['ADMIN_PASSWORD'].dup
 puts 'user: ' << user.name
 user.add_role :admin
+
+need = Need.create :budget_min=>100, :budget_max=>120, :priority=>1, :user=>user
+p need
+
+merit = Merit.create :name=>"学区房", :priority=>1, :need=>need
+p merit

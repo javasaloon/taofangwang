@@ -1,4 +1,17 @@
 %h3 Home
-- @users.each do |user|
-  %p
-    User: #{link_to user.name, user}
+- if user_signed_in?
+  = current_user.email
+  - current_user.needs.each do |n|
+    = n.budget_min.to_s + " ~ " + n.budget_max.to_s
+
+  - if current_user.needs.empty?
+    = simple_form_for(@need) do |f|
+      = f.error_notification
+
+      .form-inputs
+        = f.input :budget_min
+        = f.input :budget_max
+        = f.input :priority
+
+      .form-actions
+      = f.button :submit
