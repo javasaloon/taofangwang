@@ -1,8 +1,10 @@
-%h3 Home
-- if user_signed_in?
-  = current_user.email
-  - current_user.needs.each do |n|
-    = n.budget_min.to_s + " ~ " + n.budget_max.to_s
+%h3 我的需求
+- if user_signed_in? and !current_user.needs.empty?
+  = current_user.needs.first.budget
+  - current_user.needs.first.merits.each do |m|
+    = m.name
+  %h5 推荐板块
+
 
   - if current_user.needs.empty?
     = simple_form_for(@need) do |f|

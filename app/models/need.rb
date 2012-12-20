@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Need
   include Mongoid::Document
   include Mongoid::Timestamps
@@ -10,4 +11,8 @@ class Need
   has_many :merits, :dependent=> :delete
 
   attr_accessible :budget_max, :budget_min, :priority, :merits, :owner, :created_at, :updated_at
+  def budget
+    budget_min.to_s << " ~ " << budget_max.to_s << "万"
+
+  end
 end
