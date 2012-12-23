@@ -87,6 +87,13 @@ def seed_services(data_dir, city)
   end
 end
 
+def favors
+  user = User.first
+  names = %w(同济新村 东方城市花园二期 公园3000·黄兴花园 上海大花园)
+  names.each do |v|
+    p FavorVillage.create owner: user, village: Village.where(name:v).first
+  end
+end
 
 def seed(data_dir, city)
   roles
@@ -95,7 +102,7 @@ def seed(data_dir, city)
   cities(data_dir, city)
   seed_services(data_dir, city)
 
-  #seed_metros(data_dir, city)
+  favors
 end
 
 data_dir = "/Users/chengxiang/workspace/assets"

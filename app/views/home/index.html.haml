@@ -15,6 +15,9 @@
       .form-actions
       = f.button :submit
 
-%h5 关注板块
+  %h5 关注板块
+  - current_user.favor_villages.each do |fv|
+    = fv.village.name if fv.village
+
 
 %h5 推荐板块
