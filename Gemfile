@@ -37,3 +37,7 @@ group :development do
   gem "guard"
   gem "guard-livereload"
 end
+
+gem 'carrierwave'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+

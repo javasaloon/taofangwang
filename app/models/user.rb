@@ -14,6 +14,8 @@ class User
   field :encrypted_password, :type => String, :default => ""
 
   has_many :needs, class_name: "Need", inverse_of: :owner
+  has_many :favor_villages, class_name: "FavorVillage", inverse_of: :owner
+
 
   validates_presence_of :email
   validates_presence_of :encrypted_password

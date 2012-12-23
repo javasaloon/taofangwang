@@ -1,0 +1,2 @@
+class MiddleSchool < Service
+end

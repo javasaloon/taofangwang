@@ -3,9 +3,6 @@
   = current_user.needs.first.budget
   - current_user.needs.first.merits.each do |m|
     = m.name
-  %h5 推荐板块
-
-
   - if current_user.needs.empty?
     = simple_form_for(@need) do |f|
       = f.error_notification
@@ -17,3 +14,7 @@
 
       .form-actions
       = f.button :submit
+
+%h5 关注板块
+
+%h5 推荐板块

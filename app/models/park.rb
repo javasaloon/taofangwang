@@ -1,0 +1,2 @@
+class Park < Service
+end

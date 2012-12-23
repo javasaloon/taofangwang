@@ -1,0 +1,2 @@
+class Garden < Service
+end
