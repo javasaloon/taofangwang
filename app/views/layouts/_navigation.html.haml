@@ -1,7 +1,9 @@
 = link_to "Taofangwang", root_path, :class => 'brand'
 %ul.nav
   %li
-    = link_to "Needs", needs_path
+    = link_to "买房需求", needs_path
+  %li
+    = link_to "说板块", communities_path
   - if user_signed_in?
     %li
       = link_to 'Logout', destroy_user_session_path, :method=>'delete'

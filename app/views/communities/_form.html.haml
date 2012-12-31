@@ -1,0 +1,9 @@
+= simple_form_for(@community) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :planning
+
+  .form-actions
+    = f.button :submit

@@ -95,6 +95,10 @@ def favors
   end
 end
 
+def plannings(data_dir)
+
+end
+
 def seed(data_dir, city)
   roles
   users

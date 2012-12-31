@@ -6,18 +6,15 @@
   - if current_user.needs.empty?
     = simple_form_for(@need) do |f|
       = f.error_notification
-
       .form-inputs
         = f.input :budget_min
         = f.input :budget_max
         = f.input :priority
-
       .form-actions
       = f.button :submit
 
   %h5 关注板块
   - current_user.favor_villages.each do |fv|
-    = fv.village.name if fv.village
-
+    = fv.village.name << "(" << fv.village.community.name << ")"
 
 %h5 推荐板块

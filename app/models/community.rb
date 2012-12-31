@@ -1,6 +1,14 @@
 class Community < Base
-  include Mongoid::Document
   field :name, type: String
+  field :basic, type: String
+  field :function, type: String
+
+  field :basic, type: String
+  field :basic, type: String
+  field :basic, type: String
+  field :basic, type: String
+  field :basic, type: String
+
 
   has_many :parks
   has_many :stations
@@ -12,7 +20,8 @@ class Community < Base
   has_many :village
   belongs_to :district
 
-  attr_accessible :name, :district
+  embeds_one :planning
+  attr_accessible :name, :planning, :district
 
   def countOf(serviceName)
     method(serviceName).call().length

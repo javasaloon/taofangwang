@@ -1,4 +1,7 @@
 Taofangwang::Application.routes.draw do
+  resources :communities
+
+
   resources :merits
 
 
