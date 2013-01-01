@@ -17,11 +17,11 @@ class Community < Base
   has_many :primary_schools
   has_many :middle_schools
 
-  has_many :village
+  has_many :villages
   belongs_to :district
 
   embeds_one :planning
-  attr_accessible :name, :planning, :district
+  attr_accessible :name, :planning, :district, :villages
 
   def countOf(serviceName)
     method(serviceName).call().length

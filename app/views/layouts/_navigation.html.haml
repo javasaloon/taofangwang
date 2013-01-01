@@ -1,21 +1,21 @@
-= link_to "Taofangwang", root_path, :class => 'brand'
+= link_to "淘房", root_path, :class => 'brand'
 %ul.nav
   %li
-    = link_to "买房需求", needs_path
+    = link_to "买房说", needs_path
   %li
-    = link_to "说板块", communities_path
+    = link_to "板块说", communities_path
   - if user_signed_in?
     %li
-      = link_to 'Logout', destroy_user_session_path, :method=>'delete'
+      = link_to '退出', destroy_user_session_path, :method=>'delete'
   - else
     %li
-      = link_to 'Login', new_user_session_path
+      = link_to '登录', new_user_session_path
   - if user_signed_in?
     %li
-      = link_to 'Edit account', edit_user_registration_path
+      = link_to '我的账户', edit_user_registration_path
     - if current_user.has_role? :admin
       %li
-        = link_to 'Admin', users_path
+        = link_to '用户管理', users_path
   - else
     %li
-      = link_to 'Sign up', new_user_registration_path
+      = link_to '注册新用户', new_user_registration_path

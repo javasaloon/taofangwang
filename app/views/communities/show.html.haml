@@ -1,18 +1,60 @@
 %p#notice= notice
 .row
+  .span11
+    %h3= @community.district.name << " - "<< @community.name
+    %label.label
+      动迁安置基地
+      %i.icon-arrow-up
+      12
+      %i.icon-arrow-down
+      3
+    %label.label
+      上涨预期明显
+      %i.icon-arrow-up
+      6
+      %i.icon-arrow-down
+      0
+    %label.label
+      地铁
+      %i.icon-arrow-up
+      100
+      %i.icon-arrow-down
+      3
+    %label.label
+      生态宜居
+      %i.icon-arrow-up
+      2
+      %i.icon-arrow-down
+      19
+    .vote.pull-right
+      %a.btn-link
+        %i.icon-thumbs-up
+        我看好这里(20)
+      %a.btn-link
+        %i.icon-thumbs-down
+        不看好(10)
+      %a.btn-link
+        %i.icon-heart
+        关注这里(100)
+      %span.muted
+        30个人中有67%个看好这个板块
+%br
+.row
   .span2
     .tabbable.tabs-left
       %ul.nav.nav-tabs
         %li.active
-          %a{"data-toggle"=>"tab", :href=>"#basic"}板块基本情况
+          %a{"data-toggle"=>"tab", :href=>"#basic"}基本情况
         %li
           %a{"data-toggle"=>"tab", :href=>"#planning"}最新市政规划
         %li
-          %a{"data-toggle"=>"tab", :href=>"#swot"}板块SWOT分析
+          %a{"data-toggle"=>"tab", :href=>"#swot"}SWOT分析
+        %li
+          %a{"data-toggle"=>"tab", :href=>"#village"}推荐小区
+        %li
+          %a{"data-toggle"=>"tab", :href=>"#reference"}参考链接
 
   .span9
-    %h4
-      = @community.name
     .tab-content
       #basic.tab-pane.active
         %h5 板块基本情况
@@ -38,6 +80,8 @@
         %h6 商业规划
         %p
           由于动迁房的导入，配备了一些临街的店铺，虽然档次较低，但基本上涵盖了日常需求（比如以顾村公园为中心，往北，有美兰湖新开的大型超市；往东，有牡丹江路的易买得和地铁一号线边上的易初莲花；往西，有南翔的家乐福。）为此，规划建设一系列公园、综合体在内的商业，区域内正在建设的大型商业综合体包括绿地公园广场和绿地北郊广场，体量分别为23万方与20万方，分布在沪太路两侧。绿地公园广场为商业综合体，北郊广场为一站性购物广场。
+          - @community.stations.each do |s|
+            = s.name
 
       #swot.tab-pane
         %h5 板块SWOT分析
@@ -60,19 +104,45 @@
           大型保障房的导入，既为当地带来了诸多高端配套，但同时也整体拉低了当地的住宅品质；与此同时，短期内该地区尚无特别利好的规划；临近宝钢地区，存在一定的环境心理影响；周边的罗店新镇的快速崛起以及美兰湖地区的地产的快速开发也为该地区的发展带来了威胁。
 
 
-      %h5 规划链接
-      %p
-        %ol{}
-          %li
-            %a{:href=>"http://gc.baoshan.sh.cn/", :class=>"btn-link"}
-              顾村镇政府官方网站
-          %li
-            %a{:href=>"http://www.shbsgh.gov.cn/60/10/34/20089134806.html", :class=>"btn-link"}
-              宝山区规划局关于顾村公园的公示
-          %li
-            %a{:href=>"http://bsq.sh.gov.cn/zwxx/zxbd/200905/t20090525_100480.html", :class=>"btn-link"}
-              宝山区人民政府关于顾村公园的公示
+      #village.tab-pane
+        %h5 推荐小区
+        %p
+          %ul
+            - @community.villages.each do |v|
+              %li v.name
+            %li
+              华欣苑543号
+              %a.btn-link
+                %i.icon-thumbs-up
+                推荐(20)
+              %a.btn-link
+                %i.icon-thumbs-down
+                不推荐(10)
+            %li
+              宝林路462弄
+              %a.btn-link
+                %i.icon-thumbs-up
+                推荐(50)
+              %a.btn-link
+                %i.icon-thumbs-down
+                不推荐(30)
+          %a.btn-link
+            推荐其他小区
 
-= link_to 'Edit', edit_community_path(@community)
-\|
-= link_to 'Back', communities_path
+
+        %h5 推荐新盘
+
+      #reference.tab-pane
+        %h5 推荐链接
+        %p
+          %ol
+            %li
+              %a{:href=>"http://gc.baoshan.sh.cn/", :class=>"btn-link"}
+                顾村镇政府官方网站
+            %li
+              %a{:href=>"http://www.shbsgh.gov.cn/60/10/34/20089134806.html", :class=>"btn-link"}
+                宝山区规划局关于顾村公园的公示
+            %li
+              %a{:href=>"http://bsq.sh.gov.cn/zwxx/zxbd/200905/t20090525_100480.html", :class=>"btn-link"}
+                宝山区人民政府关于顾村公园的公示
+
