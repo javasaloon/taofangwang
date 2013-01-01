@@ -52,9 +52,9 @@ end
 
 def seed_service(txt, service)
   p "seeding #{service} using #{txt} ... "
-  lines = File.open("#{txt}.txt", "r").readlines("\\n")
+  lines = File.open("#{txt}.txt", "r").readlines #("\\n")
   lines.each do |line|
-    words = line.chomp("\\n").split(";")
+    words = line.split(";")
     #p words
     next if words.empty?
     words = words.collect {|item| item.strip}
@@ -70,15 +70,15 @@ end
 
 def seed_services(data_dir, city)
   serviceMap = [
-    #{:txt => :parks_sh, :clazz => Park},
-    #{:txt => :gardens_sh, :clazz => Garden},
-    #{:txt => :primary_schools_sh, :clazz => PrimarySchool},
-    #{:txt => :middle_schools_sh, :clazz => MiddleSchool},
-    #{:txt => :high_schools_sh, :clazz => HighSchool},
-    #{:txt => :colleges_sh, :clazz => College},
-    #{:txt => :suppermarkets_sh, :clazz => Suppermarket},
-    #{:txt => :stations_sh, :clazz => Station},
-    #{:txt => :hospitals_sh, :clazz => Hospital},
+    {:txt => :parks_sh, :clazz => Park},
+    {:txt => :gardens_sh, :clazz => Garden},
+    {:txt => :primary_schools_sh, :clazz => PrimarySchool},
+    {:txt => :middle_schools_sh, :clazz => MiddleSchool},
+    {:txt => :high_schools_sh, :clazz => HighSchool},
+    {:txt => :colleges_sh, :clazz => College},
+    {:txt => :suppermarkets_sh, :clazz => Suppermarket},
+    {:txt => :stations_sh, :clazz => Station},
+    {:txt => :hospitals_sh, :clazz => Hospital},
     {:txt => :villages_sh, :clazz => Village}
   ]
 
