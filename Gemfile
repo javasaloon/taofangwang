@@ -40,4 +40,4 @@ end
 
 gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
-
+gem 'font-awesome-sass-rails'

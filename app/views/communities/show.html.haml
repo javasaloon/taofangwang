@@ -1,31 +1,32 @@
 %p#notice= notice
 .row
-  .span11
+  .span12
     %h3= @community.district.name << " - "<< @community.name
-    %label.label
+    %label.label.badge
       动迁安置基地
-      %i.icon-arrow-up
-      12
-      %i.icon-arrow-down
-      3
-    %label.label
+    %i.icon-thumbs-up
+    12
+    %i.icon-thumbs-down
+    3
+    %label.label.badge
       上涨预期明显
-      %i.icon-arrow-up
-      6
-      %i.icon-arrow-down
-      0
-    %label.label
+    %i.icon-thumbs-up
+    12
+    %i.icon-thumbs-down
+    3
+    %label.label.badge
       地铁
-      %i.icon-arrow-up
-      100
-      %i.icon-arrow-down
-      3
-    %label.label
+    %i.icon-thumbs-up
+    12
+    %i.icon-thumbs-down
+    3
+    %label.label.badge
       生态宜居
-      %i.icon-arrow-up
-      2
-      %i.icon-arrow-down
-      19
+    %i.icon-thumbs-up
+    12
+    %i.icon-thumbs-down
+    3
+
     .vote.pull-right
       %a.btn-link
         %i.icon-thumbs-up
@@ -36,8 +37,6 @@
       %a.btn-link
         %i.icon-heart
         = "关注" << @community.name << "(200)"
-      %span.muted
-        30个人中有67%个看好这个板块
 %br
 .row
   .span3
