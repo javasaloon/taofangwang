@@ -40,9 +40,9 @@
         30个人中有67%个看好这个板块
 %br
 .row
-  .span3.bs-docs-sidebar
-    %ul.nav.nav-list.bs-docs-sidenav.affix
-      %li.active
+  .span3
+    %ul.nav.nav-list.bs-docs-sidenav{"data-spy"=>"affix"}
+      %li
         %a{:href=>"#basic"}
           %i.icon-chevron-right
           基本情况
@@ -62,7 +62,6 @@
         %a{:href=>"#reference"}
           %i.icon-chevron-right
           参考链接
-
   .span9
     %section#basic
       .page-header
