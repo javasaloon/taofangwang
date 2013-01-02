@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
-      %title= content_for?(:title) ? yield(:title) : "Taofangwang"
+      %title= content_for?(:title) ? yield(:title) : "淘房网"
       %meta{:content => content_for?(:description) ? yield(:description) : "Taofangwang", :name => "description"}
         = stylesheet_link_tag "application", :media => "all"
         = javascript_include_tag "application"
@@ -13,6 +13,7 @@
       %nav.navbar-inner
         .container
           = render 'layouts/navigation'
+
     #main{:role => "main"}
       .container
         .content
@@ -20,6 +21,10 @@
             .span12
               = render 'layouts/messages'
               = yield
-          %footer
       / ! end of .container
     / ! end of #main
+
+    %footer.footer
+      .container
+        %p
+          本站旨在为广大购房者提供全面详实的区域规划信息，并提供交流分享的平台。
