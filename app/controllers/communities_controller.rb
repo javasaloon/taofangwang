@@ -14,6 +14,7 @@ class CommunitiesController < ApplicationController
   # GET /communities/1.json
   def show
     @community = Community.find(params[:id])
+    @districts = District.all
 
     respond_to do |format|
       format.html # show.html.erb
