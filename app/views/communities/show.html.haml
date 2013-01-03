@@ -14,47 +14,44 @@
           - d.communities.each do |c|
             %a.btn-link
               = c.name
-%hr
+%hr.tab
+.hero-unit
+  %h3= @community.district.name << " - "<< @community.name
+  %label.label.badge
+    动迁安置基地
+  %i.icon-thumbs-up
+  12
+  %i.icon-thumbs-down
+  3
+  %label.label.badge
+    上涨预期明显
+  %i.icon-thumbs-up
+  12
+  %i.icon-thumbs-down
+  3
+  %label.label.badge
+    地铁
+  %i.icon-thumbs-up
+  12
+  %i.icon-thumbs-down
+  3
+  %label.label.badge
+    生态宜居
+  %i.icon-thumbs-up
+  12
+  %i.icon-thumbs-down
+  3
 
-.row
-  .span12
-    %h3= @community.district.name << " - "<< @community.name
-    %label.label.badge
-      动迁安置基地
-    %i.icon-thumbs-up
-    12
-    %i.icon-thumbs-down
-    3
-    %label.label.badge
-      上涨预期明显
-    %i.icon-thumbs-up
-    12
-    %i.icon-thumbs-down
-    3
-    %label.label.badge
-      地铁
-    %i.icon-thumbs-up
-    12
-    %i.icon-thumbs-down
-    3
-    %label.label.badge
-      生态宜居
-    %i.icon-thumbs-up
-    12
-    %i.icon-thumbs-down
-    3
-
-    .vote.pull-right
-      %a.btn-link
-        %i.icon-thumbs-up
-        = "看好" << @community.name << "(20)"
-      %a.btn-link
-        %i.icon-thumbs-down
-        不看好(10)
-      %a.btn-link
-        %i.icon-heart
-        = "关注" << @community.name << "(200)"
-%hr
+  .vote.pull-right
+    %a.btn-link
+      %i.icon-thumbs-up
+      = "看好" << @community.name << "(20)"
+    %a.btn-link
+      %i.icon-thumbs-down
+      不看好(10)
+    %a.btn-link
+      %i.icon-heart
+      = "关注" << @community.name << "(200)"
 .row
   .span3
     %ul.nav.nav-list.bs-docs-sidenav{"data-spy"=>"affix"}
@@ -65,7 +62,7 @@
       %li
         %a{:href=>"#planning"}
           %i.icon-chevron-right
-          最新市政规划
+          市政规划
       %li
         %a{:href=>"#swot"}
           %i.icon-chevron-right
@@ -73,7 +70,7 @@
       %li
         %a{:href=>"#village"}
           %i.icon-chevron-right
-          推荐小区
+          推荐楼盘
       %li
         %a{:href=>"#reference"}
           %i.icon-chevron-right
@@ -90,7 +87,7 @@
         顾村是上海市政府重点建设的动迁安置基地之一，这意味着不仅仅会安排大量市区动迁安置居民到当地，也意味着会安排三甲医院和优质教育资源以及轨道交通到当地。目前已经有著名的华山医院顾村分院在建，本地的顾村中学也是一个在宝山具有一定知名度的中学。与此同时，顾村（顾村公园）与吴淞工业区以及宝钢等三个地区是宝山新城三大组团，被宝山区政府定位于“最适宜居住地区”的绿色园林区域。因此，一些景色较好的商品房也沿着经过顾村的轨道7号线以及顾村公园周边地区建设起来。
     %section#planning
       .page-header
-        %h3 最新市政规划
+        %h3 市政规划
       %h6 整体规划
       %p
         根据规划，整体来说，顾村的发展将分为四大区域：
@@ -105,8 +102,10 @@
       %h6 商业规划
       %p
         由于动迁房的导入，配备了一些临街的店铺，虽然档次较低，但基本上涵盖了日常需求（比如以顾村公园为中心，往北，有美兰湖新开的大型超市；往东，有牡丹江路的易买得和地铁一号线边上的易初莲花；往西，有南翔的家乐福。）为此，规划建设一系列公园、综合体在内的商业，区域内正在建设的大型商业综合体包括绿地公园广场和绿地北郊广场，体量分别为23万方与20万方，分布在沪太路两侧。绿地公园广场为商业综合体，北郊广场为一站性购物广场。
-        - @community.stations.each do |s|
-          = s.name
+      %h6 板块内的超市
+      %ul
+        - @community.suppermarkets.each do |s|
+          %li=s.name
 
       %h6 产业规划
       %p
@@ -114,15 +113,44 @@
       %h6 交通规划
       %p
         区域内有地铁7号线、地铁1号线，可以换乘3、4、2号线，较为方便，但速度不快，此外还有公交宝山1线、宝山3线、701、702、963、527、528等路线（主要开往闸北和普陀和江苏太仓地区，到静安、黄埔、浦东则要依靠地铁），对外联络线路包括宝安公路、S20外环公路、沪太路、S106公路。根据规划，正在规划中的轨道交通15,17号线将经过顾村，并且规划待建S7（沪崇高速），正在建设S6（沪翔高速），都从顾村公园二期里面穿过，未来出行交通较为便利，因此宝山区已将顾村镇定位为枢纽型城镇。
+      %h6 板块内的地铁站
+      %ul
+        - @community.stations.each do |s|
+          %li=s.name
+
       %h6 医疗规划
       %p
         该板块内医疗配套以社区服务中心为主，但根据规划，由于当地建设有大型保障房基地，必须建设三甲医院，因此华山医院分院（著名的三级甲等）在建中，一旦完工投入使用，建成后将大大改善板块的医疗设施.
+      %h6 板块内的医院
+      %ul
+        - @community.hospitals.each do |s|
+          %li=s.name
       %h6 教育规划
       %p
         幼儿园，现在有顾村中心幼儿园，这是公立幼儿园，成立于1987年，比较有影响力；另外一家是荷露幼儿园（上海市宝山区顾北东路500弄19号），亦是公办幼儿园，其余基本则以民办幼儿园为主；宝山区顾村中心小学是一所当地重点小学，原来是当地重点农村小学；顾村中学是一所宝山区重点中学。未来规划中，根据上海市的统一安排，虹口区将对口支持顾村基地，虹口教育资源还是较为丰富的，有助于顾村教育资源的发展，因此规划中就将建设上外附中，这将极大地方便当地学生就近名校就读。
+      %h6 板块内的幼儿园
+      %ul
+        - @community.gardens.each do |s|
+          %li=s.name
+      %h6 板块内的小学
+      %ul
+        - @community.primary_schools.each do |s|
+          %li=s.name
+      %h6 板块内的中学
+      %ul
+        - @community.middle_schools.each do |s|
+          %li=s.name
+      %h6 板块内的大学
+      %ul
+        - @community.colleges.each do |s|
+          %li=s.name
       %h6 休闲规划
       %p
         顾村公园是上海最大开放式休闲主题公园，这也是顾村板块继轨道交通之后的另一个卖点。规划占地422公顷的顾村公园是外环绿带的重要组成部分，其定位是集运动休闲、艺术展示、商业经营为主体的现代大型综合性公园。具体到尚无大型运动会所、公共大型游泳池等，是否有规划，尚未公布。但有民营的私人运动会所。
+      %h6 板块内的公园
+      %ul
+        - @community.parks.each do |s|
+          %li=s.name
 
     %section#swot
       .page-header

@@ -1,5 +1,4 @@
-class Service
-  include Mongoid::Document
+class Service < Base
   field :name, type: String
   field :phone, type: String
 
