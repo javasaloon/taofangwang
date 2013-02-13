@@ -1,46 +1,15 @@
 %p#notice= notice
-.row
-  .span1
-    %h5 板块选择:
-  .span11
-    %ul.nav.nav-tabs{:id=>"district-tab", "data-tabs"=>"tabs"}
-      - @districts.each do |d|
-        %li
-          %a.btn-link{"data-toggle"=>"tab", :href=>"#district_#{d.id}"}
-            = d.name
-    #communicty-tab.tab-content
-      - @districts.each do |d|
-        .tab-pane{:id=>"district_#{d.id}"}
-          - d.communities.each do |c|
-            %a.btn-link
-              = c.name
-%hr.tab
+= render "tab"
 .hero-unit
   %h3= @community.district.name << " - "<< @community.name
   %label.label.badge
     动迁安置基地
-  %i.icon-thumbs-up
-  12
-  %i.icon-thumbs-down
-  3
   %label.label.badge
     上涨预期明显
-  %i.icon-thumbs-up
-  12
-  %i.icon-thumbs-down
-  3
   %label.label.badge
     地铁
-  %i.icon-thumbs-up
-  12
-  %i.icon-thumbs-down
-  3
   %label.label.badge
     生态宜居
-  %i.icon-thumbs-up
-  12
-  %i.icon-thumbs-down
-  3
 
   .vote.pull-right
     %a.btn-link

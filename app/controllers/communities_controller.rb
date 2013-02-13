@@ -3,6 +3,7 @@ class CommunitiesController < ApplicationController
   # GET /communities.json
   def index
     @communities = Community.all
+    @districts = District.all
 
     respond_to do |format|
       format.html # index.html.erb

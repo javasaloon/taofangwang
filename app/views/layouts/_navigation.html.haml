@@ -1,9 +1,10 @@
 = link_to "淘房网", root_path, :class => 'brand'
 %ul.nav
-  %li
-    = link_to "买房说", needs_path
+  -#%li
+    -#= link_to "买房说", needs_path
   %li
     = link_to "板块说", communities_path
+%ul.nav.pull-right
   - if user_signed_in?
     %li
       = link_to '退出', destroy_user_session_path, :method=>'delete'
@@ -13,9 +14,9 @@
   - if user_signed_in?
     %li
       = link_to '我的账户', edit_user_registration_path
-    - if current_user.has_role? :admin
-      %li
-        = link_to '用户管理', users_path
+    -#- if current_user.has_role? :admin
+      -#%li
+        -#= link_to '用户管理', users_path
   - else
     %li
       = link_to '注册新用户', new_user_registration_path
